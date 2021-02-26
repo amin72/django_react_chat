@@ -41,6 +41,7 @@ class ChatConsumer(WebsocketConsumer):
     def message_to_json(self, message):
         """Convert Message instance to json"""
         return {
+            'id': message.id,
             'author': message.author.username,
             'content': message.content,
             'timestamp': str(message.timestamp)
